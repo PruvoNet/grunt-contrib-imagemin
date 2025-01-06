@@ -50,10 +50,10 @@
     "xo": "^0.23.0"
   },
   "optionalDependencies": {
-    "imagemin-gifsicle": "^6.0.1",
-    "imagemin-jpegtran": "^6.0.0",
-    "imagemin-optipng": "^6.0.0",
-    "imagemin-svgo": "^7.0.0"
+    "imagemin-gifsicle": "https://github.com/PruvoNet/imagemin-gifsicle#cjs",
+    "imagemin-jpegtran": "https://github.com/PruvoNet/imagemin-jpegtran#cjs",
+    "imagemin-optipng": "https://github.com/PruvoNet/imagemin-optipng#cjs",
+    "imagemin-svgo": "https://github.com/PruvoNet/imagemin-svgo#cjs"
   },
   "appveyor_id": "7w491e6edsuanreu"
 }
