@@ -50,10 +50,10 @@
     "xo": "^0.23.0"
   },
   "optionalDependencies": {
-    "imagemin-gifsicle": "https://github.com/PruvoNet/imagemin-gifsicle#cjs",
-    "imagemin-jpegtran": "https://github.com/PruvoNet/imagemin-jpegtran#cjs",
-    "imagemin-optipng": "https://github.com/PruvoNet/imagemin-optipng#cjs",
-    "imagemin-svgo": "https://github.com/PruvoNet/imagemin-svgo#cjs"
+    "imagemin-gifsicle": "https://github.com/PruvoNet/imagemin-gifsicle#b6fe96f1a12ec6d5883aa7da3b863985666df60d",
+    "imagemin-jpegtran": "https://github.com/PruvoNet/imagemin-jpegtran#ca66ed9929f716fe6f4038ea0d4f155ee0ae8e5c",
+    "imagemin-optipng": "https://github.com/PruvoNet/imagemin-optipng#d34eca273dd932f17dc9aba9e64c30371c672c3b",
+    "imagemin-svgo": "https://github.com/PruvoNet/imagemin-svgo#77678ca483b24ef6fff09b34ed0d824597a287b5"
   },
   "appveyor_id": "7w491e6edsuanreu"
 }
