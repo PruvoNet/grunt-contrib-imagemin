@@ -10,15 +10,19 @@ const defaultPlugins = ['gifsicle', 'jpegtran', 'optipng', 'svgo'];
 const loadPlugin = (grunt, plugin, opts) => {
 	try {
 		const mod = require(`imagemin-${plugin}`);
-		// The PruvoNet imagemin-{gifsicle,jpegtran,optipng} forks are ESM
-		// with `export default`; `require()` of an ESM module yields a
-		// namespace `{default: fn, __esModule: true}` instead of the fn
-		// itself. CJS plugins (e.g. imagemin-svgo upstream) still come
-		// through as the function directly. Handle both.
+		// The PruvoNet imagemin-* forks are ESM with `export default`;
+		// `require()` of an ESM module yields a namespace
+		// `{default: fn, __esModule: true}` instead of the fn itself.
+		// Pure-CJS plugins come through as the function directly. Handle
+		// both.
 		const factory = (mod && typeof mod === 'object' && 'default' in mod) ? mod.default : mod;
 		return factory(opts);
 	} catch (error) {
-		grunt.warn(`Couldn't load default plugin "${plugin}"`);
+		// Surface the underlying reason — a silent "Couldn't load" hides
+		// MODULE_NOT_FOUND (optional dep skipped) vs. ESM-from-CJS
+		// failures vs. plugin-side init bugs, which all have very
+		// different fixes.
+		grunt.warn(`Couldn't load default plugin "${plugin}": ${error && error.message ? error.message : error}`);
 	}
 };
 

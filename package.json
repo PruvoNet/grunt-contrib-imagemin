@@ -46,7 +46,7 @@
     "imagemin-gifsicle": "github:PruvoNet/imagemin-gifsicle#v7.2.0",
     "imagemin-jpegtran": "github:PruvoNet/imagemin-jpegtran#v8.2.0",
     "imagemin-optipng": "github:PruvoNet/imagemin-optipng#v8.3.0",
-    "imagemin-svgo": "github:PruvoNet/imagemin-svgo#v11.1.0"
+    "imagemin-svgo": "github:PruvoNet/imagemin-svgo#v12.0.0"
   },
   "appveyor_id": "7w491e6edsuanreu"
 }
