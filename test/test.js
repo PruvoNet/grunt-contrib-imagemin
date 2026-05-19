@@ -1,9 +1,14 @@
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 import test from 'ava';
 
-const fixture = path.join.bind(path, __dirname, 'fixtures');
-const tmp = path.join.bind(path, __dirname, '..', 'tmp');
+// ava v6 treats this file as ESM (it has `import` statements), where
+// `__dirname` is not defined. `import.meta.dirname` is Node 20.11+ and
+// covers our `engines: >=18` policy in practice — the wrapper's own CI
+// runs on Node 24/26 only.
+const here = import.meta.dirname;
+const fixture = path.join.bind(path, here, 'fixtures');
+const tmp = path.join.bind(path, here, '..', 'tmp');
 
 test('minify png', t => {
 	const original = fs.readFileSync(fixture('test.png'));
